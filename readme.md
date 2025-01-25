@@ -17,7 +17,7 @@ This is a simple command-line To-Do List application written in Python. It allow
 
 1. **Clone the repository**
 ```sh
-  git clone https://github.com/Hoeur/python-todo-samplegit
+  git clone https://github.com/Hoeur/python-todo-sample.git
   cd todo-list
 ```
 
@@ -50,7 +50,4 @@ This is a simple command-line To-Do List application written in Python. It allow
 
 ## Contributing
 Feel free to fork this repository and submit pull requests with improvements.
-
-## License
-This project is open-source and available under the MIT License.
 
