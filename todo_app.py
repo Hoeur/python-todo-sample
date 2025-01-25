@@ -17,7 +17,9 @@ class TodoList:
         print(f"Task {description} added successfully")
     def view_task(self):
         """"display all tasks"""
-        print("\n Your Task List:\n")
+        print("\n============================")
+        print("Your Task List:")
+        print("============================\n")
         if len(self.tasks) == 0:
             return print("No tasks found")
         
@@ -54,14 +56,47 @@ class TodoList:
         finally:
             print("Task loaded successfully")   
             return self.tasks         
-                
-                
+
+          
+def main():
+    todo = TodoList()
+    
+    while True:
+        print("\n=== To-do List Application ===\n")
+        print("1. Add task")      
+        print("2. View task")      
+        print("3. Complete task")      
+        print("4. Delete task")      
+        print("5. Exit")      
+        
+        choice = int(input("Enter your choice(1-5): "))
+        if choice == 1:
+            description = input("Enter task description: ")
+            todo.add_task(description)
+            todo.save_task()
+            todo.load_task()
+        elif choice == 2:
+            print(todo.load_task())
+        elif choice == 3:
+            todo.load_task()
+            task_id = int(input("Enter task ID to mark as completed: "))
+            todo.mark_as_completed(task_id)
+            todo.load_task()
+        elif choice == 4:
+            todo.load_task()
+            task_id = int(input("Enter task ID to delete: "))
+            todo.delete_task(task_id)
+            todo.save_task()
+            todo.load_task()
+        else:
+            return False
 if __name__ == "__main__":    
     todo = TodoList()
-    todo.add_task("Learn Python");
-    todo.add_task("Learn Django");
-    todo.add_task("Learn Flask");
-    todo.save_task()
-    todo.add_task("Learn Database");
-    print(todo.load_task())
+    main()
+    # todo.add_task("Learn Python");
+    # todo.add_task("Learn Django");
+    # todo.add_task("Learn Flask");
+    # todo.save_task()
+    # todo.add_task("Learn Database");
+    # print(todo.load_task())
     
